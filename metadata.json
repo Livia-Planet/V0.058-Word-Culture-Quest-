@@ -1,0 +1,8 @@
+{
+  "name": "V0.058 汉字与文化大冒险 (Word \u0026 Culture Quest)",
+  "description": "专为具备中文口语听力基础、突破3500高频字与400字小作文的听说驱动传统文化RPG学习应用",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

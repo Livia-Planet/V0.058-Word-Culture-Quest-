@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.font-festive {
+  font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', cursive, sans-serif;
+}
+
+.font-calligraphy {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+}
+
+/* 田字格 / 米字格 (Chinese character practice grid) */
+.tianzige {
+  position: relative;
+  background-color: #fffdfa;
+  box-shadow: inset 0 0 0 1px #e2c092;
+}
+
+.tianzige::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: repeating-linear-gradient(to right, #e8a87c 0, #e8a87c 4px, transparent 4px, transparent 8px);
+  pointer-events: none;
+}
+
+.tianzige::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, #e8a87c 0, #e8a87c 4px, transparent 4px, transparent 8px);
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fef3c7;
+}
+::-webkit-scrollbar-thumb {
+  background: #f87171;
+  border-radius: 9999px;
+}
+
+/* 隐藏滚动条（用于书架横向分页等场景） */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* 龙年春节祥云漂浮动效 */
+@keyframes cloudDriftLeft {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-14px, -4px) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes cloudDriftRight {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(16px, 5px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+.animate-cloud-left {
+  animation: cloudDriftLeft 6s ease-in-out infinite;
+}
+
+.animate-cloud-right {
+  animation: cloudDriftRight 7s ease-in-out infinite;
+}
+
+/* 金币坠落与抛洒动效 */
+@keyframes coinFall {
+  0% {
+    transform: translateY(-40px) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0px) rotate(90deg) scale(1.1);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(220px) rotate(720deg) scale(0.95);
+  }
+  100% {
+    transform: translateY(260px) rotate(900deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.animate-coin-drop {
+  animation: coinFall 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* 笔迹偏差半透明抖动动画 */
+@keyframes strokeTremor {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-5px, 2px) rotate(-1.5deg); }
+  30% { transform: translate(5px, -3px) rotate(1.5deg); }
+  45% { transform: translate(-4px, -2px) rotate(-1deg); }
+  60% { transform: translate(4px, 2px) rotate(1deg); }
+  75% { transform: translate(-2px, 1px) rotate(-0.5deg); }
+  90% { transform: translate(2px, -1px) rotate(0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.animate-stroke-tremor {
+  animation: strokeTremor 0.45s ease-in-out;
+}
+
+
